@@ -1,0 +1,2224 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/asus/UniswapX/src/base/BlockNumberish.sol": {
+      "lastModificationDate": 1741731349117,
+      "contentHash": "d39a8dfda330f865a3aca9c975a1778e",
+      "sourceName": "src/base/BlockNumberish.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IArbSys.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BlockNumberish"
+      ]
+    },
+    "/home/asus/UniswapX/src/interfaces/IArbSys.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "cd0dc6c007efae6b9caf93d77009917c",
+      "sourceName": "src/interfaces/IArbSys.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IArbSys"
+      ]
+    },
+    "/home/asus/UniswapX/src/reactors/V3DutchOrderReactor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "d4585b85a68a3876c089b02fb299af73",
+      "sourceName": "src/reactors/V3DutchOrderReactor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BaseReactor.sol",
+        "permit2/src/interfaces/IPermit2.sol",
+        "../lib/Permit2Lib.sol",
+        "../lib/ExclusivityLib.sol",
+        "../lib/NonlinearDutchDecayLib.sol",
+        "../lib/V3DutchOrderLib.sol",
+        "../base/ReactorStructs.sol",
+        "../base/BlockNumberish.sol",
+        "solmate/src/utils/FixedPointMathLib.sol",
+        "../lib/MathExt.sol",
+        "openzeppelin-contracts/utils/math/Math.sol",
+        "../lib/CosignerLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "V3DutchOrderReactor"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/Permit2Lib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "70f89f032e382066eaede2aa7e327221",
+      "sourceName": "src/lib/Permit2Lib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "permit2/src/interfaces/ISignatureTransfer.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Permit2Lib"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/ExclusivityLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "bc58cf0e286f197eff3bf1d0be2b330b",
+      "sourceName": "src/lib/ExclusivityLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "solmate/src/utils/FixedPointMathLib.sol",
+        "../base/ReactorStructs.sol",
+        "../interfaces/IArbSys.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ExclusivityLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/NonlinearDutchDecayLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "7bbfdb90053eb6a19dbc63dde3c13536",
+      "sourceName": "src/lib/NonlinearDutchDecayLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol",
+        "../lib/V3DutchOrderLib.sol",
+        "solmate/src/utils/FixedPointMathLib.sol",
+        "./MathExt.sol",
+        "openzeppelin-contracts/utils/math/Math.sol",
+        "../types/Uint16Array.sol",
+        "./DutchDecayLib.sol",
+        "../interfaces/IArbSys.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "NonlinearDutchDecayLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/V3DutchOrderLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "4a4b146931f375b9bc95af1b4af261d2",
+      "sourceName": "src/lib/V3DutchOrderLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./DutchOrderLib.sol",
+        "../base/ReactorStructs.sol",
+        "./OrderInfoLib.sol",
+        "solmate/src/tokens/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "V3DutchOrderLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/base/ReactorStructs.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "e1ba0881d2cedb82355152e9f0cb4510",
+      "sourceName": "src/base/ReactorStructs.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IReactor.sol",
+        "../interfaces/IValidationCallback.sol",
+        "solmate/src/tokens/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": []
+    },
+    "/home/asus/UniswapX/src/lib/MathExt.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "f961641bf74f8047eb79f83ce40260fd",
+      "sourceName": "src/lib/MathExt.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "openzeppelin-contracts/utils/math/SafeCast.sol",
+        "openzeppelin-contracts/utils/math/Math.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MathExt"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/CosignerLib.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "aedda3f0f44d44329c9626c19d3c490e",
+      "sourceName": "src/lib/CosignerLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CosignerLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/reactors/BaseReactor.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "03e4b3d3a570ee0de3b4dae85770ec2f",
+      "sourceName": "src/reactors/BaseReactor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "solmate/src/utils/SafeTransferLib.sol",
+        "openzeppelin-contracts/security/ReentrancyGuard.sol",
+        "permit2/src/interfaces/IPermit2.sol",
+        "solmate/src/tokens/ERC20.sol",
+        "../base/ReactorEvents.sol",
+        "../lib/ResolvedOrderLib.sol",
+        "../lib/CurrencyLibrary.sol",
+        "../interfaces/IReactorCallback.sol",
+        "../interfaces/IReactor.sol",
+        "../base/ProtocolFees.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BaseReactor"
+      ]
+    },
+    "/home/asus/UniswapX/lib/permit2/src/interfaces/IPermit2.sol": {
+      "lastModificationDate": 1741807030583,
+      "contentHash": "1186e406ac0acbb224428a4b1152dbf9",
+      "sourceName": "permit2/src/interfaces/IPermit2.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ISignatureTransfer.sol",
+        "./IAllowanceTransfer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IPermit2"
+      ]
+    },
+    "/home/asus/UniswapX/lib/solmate/src/utils/FixedPointMathLib.sol": {
+      "lastModificationDate": 1741807050798,
+      "contentHash": "3945241174f1c8fdcd51c2571f8ec92e",
+      "sourceName": "solmate/src/utils/FixedPointMathLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.0"
+      ],
+      "artifacts": [
+        "FixedPointMathLib"
+      ]
+    },
+    "/home/asus/UniswapX/lib/openzeppelin-contracts/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1741807028425,
+      "contentHash": "fe63409d8a06818b926cf89e0ea88b1b",
+      "sourceName": "openzeppelin-contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/home/asus/UniswapX/lib/permit2/src/interfaces/ISignatureTransfer.sol": {
+      "lastModificationDate": 1741807030583,
+      "contentHash": "3158bafaa78bab6bfdebf3005987c334",
+      "sourceName": "permit2/src/interfaces/ISignatureTransfer.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IEIP712.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "ISignatureTransfer"
+      ]
+    },
+    "/home/asus/UniswapX/src/interfaces/IReactor.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "28727655f849d456d65945a9ea7f8c0b",
+      "sourceName": "src/interfaces/IReactor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IReactor"
+      ]
+    },
+    "/home/asus/UniswapX/src/interfaces/IValidationCallback.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "313d23c569b08c419327b548969c718e",
+      "sourceName": "src/interfaces/IValidationCallback.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IValidationCallback"
+      ]
+    },
+    "/home/asus/UniswapX/lib/solmate/src/tokens/ERC20.sol": {
+      "lastModificationDate": 1741807050798,
+      "contentHash": "0c7c7ada139062536af09d69d96d395c",
+      "sourceName": "solmate/src/tokens/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.0"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/home/asus/UniswapX/lib/permit2/src/interfaces/IEIP712.sol": {
+      "lastModificationDate": 1741807030582,
+      "contentHash": "c159d42533cdb69d0020ebfde3d0f736",
+      "sourceName": "permit2/src/interfaces/IEIP712.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "IEIP712"
+      ]
+    },
+    "/home/asus/UniswapX/src/types/Uint16Array.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "0db7923ab11e3152f3e749903911b329",
+      "sourceName": "src/types/Uint16Array.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Uint16ArrayLibrary"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/DutchDecayLib.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "a728c4fee222baaa84c6c776207bca6f",
+      "sourceName": "src/lib/DutchDecayLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol",
+        "../lib/DutchOrderLib.sol",
+        "solmate/src/utils/FixedPointMathLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DutchDecayLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/OrderInfoLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "2e180aab1615ed31a7dcbdc6a6103569",
+      "sourceName": "src/lib/OrderInfoLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OrderInfoLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/DutchOrderLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "672224d4fc34f4cb569bfeb5bfdbb039",
+      "sourceName": "src/lib/DutchOrderLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol",
+        "./OrderInfoLib.sol",
+        "solmate/src/tokens/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DutchOrderLib"
+      ]
+    },
+    "/home/asus/UniswapX/lib/openzeppelin-contracts/contracts/utils/math/SafeCast.sol": {
+      "lastModificationDate": 1741807028425,
+      "contentHash": "67cf2dfe1d1c22b4ea7f242e8a17f431",
+      "sourceName": "openzeppelin-contracts/utils/math/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/home/asus/UniswapX/src/base/ReactorEvents.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "07c28859a06fc281a119343216b0e5e9",
+      "sourceName": "src/base/ReactorEvents.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ReactorEvents"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/ResolvedOrderLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "143762f43908d7aebe10894079803ef2",
+      "sourceName": "src/lib/ResolvedOrderLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ResolvedOrderLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/CurrencyLibrary.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "905e83917939c11f0f6a12c0d700706c",
+      "sourceName": "src/lib/CurrencyLibrary.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "solmate/src/tokens/ERC20.sol",
+        "permit2/src/interfaces/IPermit2.sol",
+        "openzeppelin-contracts/utils/math/SafeCast.sol",
+        "solmate/src/utils/SafeTransferLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CurrencyLibrary"
+      ]
+    },
+    "/home/asus/UniswapX/src/interfaces/IReactorCallback.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "3af4e5772e4f180ef7fd967dc23c7cd0",
+      "sourceName": "src/interfaces/IReactorCallback.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IReactorCallback"
+      ]
+    },
+    "/home/asus/UniswapX/src/base/ProtocolFees.sol": {
+      "lastModificationDate": 1741731349117,
+      "contentHash": "6e1b8c722305788d047de3e90c1e1c46",
+      "sourceName": "src/base/ProtocolFees.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "solmate/src/auth/Owned.sol",
+        "solmate/src/utils/SafeTransferLib.sol",
+        "solmate/src/utils/FixedPointMathLib.sol",
+        "solmate/src/tokens/ERC20.sol",
+        "../interfaces/IProtocolFeeController.sol",
+        "../lib/CurrencyLibrary.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ProtocolFees"
+      ]
+    },
+    "/home/asus/UniswapX/lib/solmate/src/utils/SafeTransferLib.sol": {
+      "lastModificationDate": 1741807050798,
+      "contentHash": "0563dad64d8104a8995928b43d405f88",
+      "sourceName": "solmate/src/utils/SafeTransferLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../tokens/ERC20.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.0"
+      ],
+      "artifacts": [
+        "SafeTransferLib"
+      ]
+    },
+    "/home/asus/UniswapX/lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol": {
+      "lastModificationDate": 1741807028419,
+      "contentHash": "1535f8c0c68463f8c1b5239f7584e71f",
+      "sourceName": "openzeppelin-contracts/security/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "/home/asus/UniswapX/lib/permit2/src/interfaces/IAllowanceTransfer.sol": {
+      "lastModificationDate": 1741807030582,
+      "contentHash": "98c6097122b28bf3bbcd7119e911f8d3",
+      "sourceName": "permit2/src/interfaces/IAllowanceTransfer.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IEIP712.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "IAllowanceTransfer"
+      ]
+    },
+    "/home/asus/UniswapX/src/interfaces/IProtocolFeeController.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "361d235421c7f6f0982959beca3b568e",
+      "sourceName": "src/interfaces/IProtocolFeeController.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IProtocolFeeController"
+      ]
+    },
+    "/home/asus/UniswapX/lib/solmate/src/auth/Owned.sol": {
+      "lastModificationDate": 1741807050795,
+      "contentHash": "11fec455b72d2743b77d783d6017e1e9",
+      "sourceName": "solmate/src/auth/Owned.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.0"
+      ],
+      "artifacts": [
+        "Owned"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/PriorityFeeLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "3f84001b075c9ceda0e672c2154342ec",
+      "sourceName": "src/lib/PriorityFeeLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol",
+        "../lib/PriorityOrderLib.sol",
+        "solmate/src/utils/FixedPointMathLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PriorityFeeLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/PriorityOrderLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "ce376b1b7a5c0434cb02c40122707538",
+      "sourceName": "src/lib/PriorityOrderLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol",
+        "./OrderInfoLib.sol",
+        "solmate/src/tokens/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PriorityOrderLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/reactors/PriorityOrderReactor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "a24da198b1d0d56a09289b4b5c166e75",
+      "sourceName": "src/reactors/PriorityOrderReactor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BaseReactor.sol",
+        "../lib/Permit2Lib.sol",
+        "../lib/PriorityOrderLib.sol",
+        "../lib/PriorityFeeLib.sol",
+        "../lib/CosignerLib.sol",
+        "../base/ReactorStructs.sol",
+        "permit2/src/interfaces/IPermit2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PriorityOrderReactor"
+      ]
+    },
+    "/home/asus/UniswapX/src/reactors/V2DutchOrderReactor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "4c799baf70d9171dbce2bbd82aae9ce7",
+      "sourceName": "src/reactors/V2DutchOrderReactor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BaseReactor.sol",
+        "permit2/src/interfaces/IPermit2.sol",
+        "../lib/Permit2Lib.sol",
+        "../lib/ExclusivityLib.sol",
+        "../lib/DutchDecayLib.sol",
+        "../lib/V2DutchOrderLib.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "V2DutchOrderReactor"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/V2DutchOrderLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "99f314ce8689bb19699ab516cc4efe60",
+      "sourceName": "src/lib/V2DutchOrderLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol",
+        "./DutchOrderLib.sol",
+        "./OrderInfoLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "V2DutchOrderLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/reactors/LimitOrderReactor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "40e4927de93438bde11f730a8338b09b",
+      "sourceName": "src/reactors/LimitOrderReactor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BaseReactor.sol",
+        "../lib/Permit2Lib.sol",
+        "../lib/LimitOrderLib.sol",
+        "../base/ReactorStructs.sol",
+        "permit2/src/interfaces/IPermit2.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LimitOrderReactor"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/LimitOrderLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "4e5249b038c4619a7a3715d58959bfa2",
+      "sourceName": "src/lib/LimitOrderLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol",
+        "./OrderInfoLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "LimitOrderLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/sample-validation-contracts/ExclusiveFillerValidation.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "90892457b58c37f3715ca4481709c54d",
+      "sourceName": "src/sample-validation-contracts/ExclusiveFillerValidation.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IValidationCallback.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ExclusiveFillerValidation"
+      ]
+    },
+    "/home/asus/UniswapX/src/sample-executors/UniversalRouterExecutor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "b8cc3d86533819d528c7010c29ee2639",
+      "sourceName": "src/sample-executors/UniversalRouterExecutor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "solmate/src/auth/Owned.sol",
+        "solmate/src/utils/SafeTransferLib.sol",
+        "solmate/src/tokens/ERC20.sol",
+        "permit2/src/interfaces/IPermit2.sol",
+        "../interfaces/IReactorCallback.sol",
+        "../interfaces/IReactor.sol",
+        "../lib/CurrencyLibrary.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "UniversalRouterExecutor"
+      ]
+    },
+    "/home/asus/UniswapX/src/sample-executors/SwapRouter02Executor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "e827ad5c7f5abea07a9bef61bd8b2467",
+      "sourceName": "src/sample-executors/SwapRouter02Executor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "solmate/src/auth/Owned.sol",
+        "solmate/src/utils/SafeTransferLib.sol",
+        "solmate/src/tokens/ERC20.sol",
+        "solmate/src/tokens/WETH.sol",
+        "../interfaces/IReactorCallback.sol",
+        "../interfaces/IReactor.sol",
+        "../lib/CurrencyLibrary.sol",
+        "../base/ReactorStructs.sol",
+        "../external/ISwapRouter02.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SwapRouter02Executor"
+      ]
+    },
+    "/home/asus/UniswapX/src/external/ISwapRouter02.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "567e77c6bd29636fb788dd9f5bacf0fd",
+      "sourceName": "src/external/ISwapRouter02.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ISwapRouter02"
+      ]
+    },
+    "/home/asus/UniswapX/lib/solmate/src/tokens/WETH.sol": {
+      "lastModificationDate": 1741807050798,
+      "contentHash": "69e323c35e4dc91027eab887117aa765",
+      "sourceName": "solmate/src/tokens/WETH.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ERC20.sol",
+        "../utils/SafeTransferLib.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.0"
+      ],
+      "artifacts": [
+        "WETH"
+      ]
+    },
+    "/home/asus/UniswapX/src/sample-executors/MultiFillerSwapRouter02Executor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "0cbcba8f4ed7320f2d71c39365f5f31d",
+      "sourceName": "src/sample-executors/MultiFillerSwapRouter02Executor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "solmate/src/auth/Owned.sol",
+        "solmate/src/utils/SafeTransferLib.sol",
+        "solmate/src/tokens/ERC20.sol",
+        "solmate/src/tokens/WETH.sol",
+        "../interfaces/IReactorCallback.sol",
+        "../interfaces/IReactor.sol",
+        "../lib/CurrencyLibrary.sol",
+        "../base/ReactorStructs.sol",
+        "../external/ISwapRouter02.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MultiFillerSwapRouter02Executor"
+      ]
+    },
+    "/home/asus/UniswapX/src/sample-executors/BebopExecutor.sol": {
+      "lastModificationDate": 1741986832935,
+      "contentHash": "d81282f2a6a45b4b9b6e3930b3522fa0",
+      "sourceName": "src/sample-executors/BebopExecutor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "solmate/src/auth/Owned.sol",
+        "solmate/src/utils/SafeTransferLib.sol",
+        "solmate/src/tokens/ERC20.sol",
+        "solmate/src/tokens/WETH.sol",
+        "../interfaces/IReactorCallback.sol",
+        "../interfaces/IReactor.sol",
+        "../lib/CurrencyLibrary.sol",
+        "../base/ReactorStructs.sol",
+        "../external/ISwapRouter02.sol",
+        "../interfaces/IBebopSettlement.sol",
+        "hardhat/console.sol",
+        "permit2/src/interfaces/IERC1271.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BebopExecutor"
+      ]
+    },
+    "/home/asus/UniswapX/src/interfaces/IBebopSettlement.sol": {
+      "lastModificationDate": 1741807348807,
+      "contentHash": "9129334f00c04c02f68026bd85669baa",
+      "sourceName": "src/interfaces/IBebopSettlement.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBebopSettlement"
+      ]
+    },
+    "/home/asus/UniswapX/src/lens/OrderQuoter.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "20131b05e9c63890148b85a2ad06a1f0",
+      "sourceName": "src/lens/OrderQuoter.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IReactorCallback.sol",
+        "../interfaces/IReactor.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "OrderQuoter"
+      ]
+    },
+    "/home/asus/UniswapX/src/reactors/DutchOrderReactor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "2248c6c849e1f8323293a0f4bfc41afa",
+      "sourceName": "src/reactors/DutchOrderReactor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "permit2/src/interfaces/IPermit2.sol",
+        "./BaseReactor.sol",
+        "../lib/Permit2Lib.sol",
+        "../lib/DutchDecayLib.sol",
+        "../lib/DutchOrderLib.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DutchOrderReactor"
+      ]
+    },
+    "/home/asus/UniswapX/src/reactors/ExclusiveDutchOrderReactor.sol": {
+      "lastModificationDate": 1741731349120,
+      "contentHash": "65cfb74a0779c7c19a1d15cc8330cef1",
+      "sourceName": "src/reactors/ExclusiveDutchOrderReactor.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./BaseReactor.sol",
+        "permit2/src/interfaces/IPermit2.sol",
+        "../lib/ExclusivityLib.sol",
+        "../lib/Permit2Lib.sol",
+        "../lib/DutchDecayLib.sol",
+        "../lib/ExclusiveDutchOrderLib.sol",
+        "../base/ReactorStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ExclusiveDutchOrderReactor"
+      ]
+    },
+    "/home/asus/UniswapX/src/lib/ExclusiveDutchOrderLib.sol": {
+      "lastModificationDate": 1741731349119,
+      "contentHash": "87d0b32107f7892e2449ebad310ef152",
+      "sourceName": "src/lib/ExclusiveDutchOrderLib.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../base/ReactorStructs.sol",
+        "./DutchOrderLib.sol",
+        "./OrderInfoLib.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ExclusiveDutchOrderLib"
+      ]
+    },
+    "/home/asus/UniswapX/src/external/IUniversalRouter.sol": {
+      "lastModificationDate": 1741731349118,
+      "contentHash": "62d5b5e75e306d1f1816b2741131f9e7",
+      "sourceName": "src/external/IUniversalRouter.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "IUniversalRouter"
+      ]
+    },
+    "/home/asus/UniswapX/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1741731495596,
+      "contentHash": "681c532e816169606d13a5fe8b475074",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/home/asus/UniswapX/lib/permit2/src/interfaces/IERC1271.sol": {
+      "lastModificationDate": 1741807030583,
+      "contentHash": "6d63e3df05397d75a7538291a7b44957",
+      "sourceName": "permit2/src/interfaces/IERC1271.sol",
+      "solcConfig": {
+        "version": "0.8.28",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "IERC1271"
+      ]
+    }
+  }
+}
