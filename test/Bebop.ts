@@ -42,9 +42,12 @@ describe("Bebop", function () {
     
     const DutchReactor = await hre.ethers.getContractFactory("DutchOrderReactor");
     const dutchReactor = await DutchReactor.deploy("0x000000000022d473030f116ddee9f6b43ac78ba3",owner.address);
+    await dutchReactor.waitForDeployment();
 
     const BebopExecutor = await hre.ethers.getContractFactory("BebopExecutor");
     const bebopExecutor = await BebopExecutor.deploy(owner, await dutchReactor.getAddress(),owner);
+
+    await bebopExecutor.waitForDeployment();
 
     await impersonateAccount(await dutchReactor.getAddress());
     const pretendReactor = await hre.ethers.getSigner(await dutchReactor.getAddress());
@@ -60,10 +63,10 @@ describe("Bebop", function () {
       const { owner, pretendReactor, weth, permit2, dutchReactor, bebopExecutor } = await loadFixture(deployBebopFixture);
      console.log(`Bebop Executor: ${await bebopExecutor.getAddress()}`);
 
-      const buyTokens = ["0xdAC17F958D2ee523a2206206994597C13D831ec7"] // USDT
+      const buyTokens = ["0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"] // USDT
       const sellTokens = ["0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"] // WETH
       const totalAmount = 150000000000000000n
-      const buyAmount = 100000000000;
+      const buyAmount = 100000000000n;
 
       let response;
       await setBalance(owner.address,totalAmount);
@@ -88,7 +91,6 @@ describe("Bebop", function () {
               sell_tokens: sellTokens.toString(),
               sell_amounts: buyAmount.toString(),
               taker_address: await bebopExecutor.getAddress(),
-              receiver_address: "0x5Bad996643a924De21b6b2875c85C33F3c5bBcB6",
               gasless: false,
               skip_validation: true
               
@@ -104,7 +106,7 @@ describe("Bebop", function () {
 
     //remove the function selector from the calldata provided by Bebop API
     // leaving only the arguments for the bebop.singleSwap function
-    const calldata = "0x" + response.tx.data.slice(10);
+    const calldata =  response.tx.data;
     console.log(calldata);
 
 
@@ -145,9 +147,12 @@ describe("Bebop", function () {
         }
       ]
 
-      await bebopExecutor.connect(pretendReactor).reactorCallback(resolved,calldata,{maxFeePerGas: feeData.maxFeePerGas, maxPriorityFeePerGas: feeData.maxPriorityFeePerGas});
+      await bebopExecutor.connect(pretendReactor).reactorCallback(resolved,calldata);
       console.log(await USDT.balanceOf(await dutchReactor.getAddress()));
-      
+      console.log(`Owner: ${owner.address}`);
+      console.log(`Executor: ${await bebopExecutor.getAddress()}`);
+      console.log("pretendreactor",pretendReactor.address);
+      console.log("dutchreactor", await dutchReactor.getAddress());
       
     });
 

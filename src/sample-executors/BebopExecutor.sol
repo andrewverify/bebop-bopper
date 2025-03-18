@@ -16,7 +16,7 @@ import {IERC1271} from "permit2/src/interfaces/IERC1271.sol";
 
 
 /// @notice A fill contract that uses SwapRouter02 to execute trades
-contract BebopExecutor is IReactorCallback, Owned, IERC1271 {
+contract BebopExecutor is IReactorCallback, Owned  {
     using SafeTransferLib for ERC20;
     using CurrencyLibrary for address;
 
@@ -51,13 +51,10 @@ contract BebopExecutor is IReactorCallback, Owned, IERC1271 {
         reactor = _reactor;
         weth = WETH(payable(0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2));
     }
-     function isValidSignature(
-    bytes32 _hash,
-    bytes calldata _signature
-  ) external view returns (bytes4) {
-      return 0x1626ba7e;
    
-  }
+  
+
+  
 
     /// @notice assume that we already have all output tokens
     function execute(SignedOrder calldata order, bytes calldata callbackData) external onlyWhitelistedCaller {
@@ -78,11 +75,12 @@ contract BebopExecutor is IReactorCallback, Owned, IERC1271 {
         (
             Single memory singleOrder,
             MakerSignature memory makerSignature,
-            uint256 filledTakerAmount
 
 
-        ) = abi.decode(callbackData, (Single, MakerSignature,uint256));
+        ) = abi.decode(callbackData[4:], (Single, MakerSignature,uint256));
+        // makerSignature.flags = 1;
 
+        console.log("maker signature (API):");
         console.logBytes(makerSignature.signatureBytes);
         console.log("maker token: %s",singleOrder.maker_token);
 
@@ -97,7 +95,6 @@ contract BebopExecutor is IReactorCallback, Owned, IERC1271 {
             
         }
 
-        bebopContract.swapSingle(singleOrder, makerSignature, filledTakerAmount);
         // transfer any native balance to the reactor
         // it will refund any excess
         if (address(this).balance > 0) {

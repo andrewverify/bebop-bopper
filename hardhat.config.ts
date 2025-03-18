@@ -1,6 +1,7 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomicfoundation/hardhat-foundry";
+import "hardhat-tracer";
 
 const config: HardhatUserConfig = {
   solidity: "0.8.28",
@@ -10,12 +11,10 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       forking: {
-        url: "https://rpc.ankr.com/eth",
+        url: "https://mainnet.infura.io/v3/100a0970864f4dde865358262e3d5bb4",
         enabled: true,
         
       },
-      gas: 100000,
-      gasPrice: 700441629
 
     }
   }

@@ -24,14 +24,9 @@ interface IBebopSettlement {
 
     event BebopOrder(uint128 indexed eventId);
 
-    /// @notice Taker execution of one-to-one trade with one maker
-    /// @param order Single order struct
-    /// @param makerSignature Maker's signature for SingleOrder
-    /// @param filledTakerAmount Partially filled taker amount, 0 for full fill
-    function swapSingle(
+    function swapSingleFromContract(
         Single calldata order,
-        MakerSignature calldata makerSignature,
-        uint256 filledTakerAmount
+        MakerSignature calldata makerSignature
     ) external payable;
 
   

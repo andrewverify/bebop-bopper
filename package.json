@@ -28,6 +28,7 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "axios": "^1.8.3"
+    "axios": "^1.8.3",
+    "hardhat-tracer": "^3.1.0"
   }
 }

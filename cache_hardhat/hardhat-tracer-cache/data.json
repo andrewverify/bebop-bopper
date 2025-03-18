@@ -1,0 +1,216 @@
+{
+  "tokenDecimals": [
+    [
+      "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      18
+    ],
+    [
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      6
+    ],
+    [
+      "0x43506849d7c04f9138d1a2050bbf3a0c054402dd",
+      0
+    ]
+  ],
+  "contractNames": [
+    [
+      "0xa7480b62a657555f6727bcdb96953bcc211ffbac",
+      "unknown"
+    ],
+    [
+      "0x87a2688d6e41b23d802f74c6b1f06a8e8d118929",
+      "unknown"
+    ],
+    [
+      "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "WETH"
+    ],
+    [
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "USDC"
+    ],
+    [
+      "0x43506849d7c04f9138d1a2050bbf3a0c054402dd",
+      ""
+    ],
+    [
+      "0xbbbbbbb520d69a9775e85b458c58c648259fad5f",
+      "unknown"
+    ],
+    [
+      "0x807cf9a772d5a3f9cefbc1192e939d62f0d9bd38",
+      "unknown"
+    ],
+    [
+      "0xbe4e645caaae7c1d0874bb8d1c8d337f31d79dd8",
+      "unknown"
+    ],
+    [
+      "0xe9f191c09679a745a1d7a7f20658681b18d9a31a",
+      "unknown"
+    ],
+    [
+      "0xdf66ab853fc112ec955531bd76e9079db30a0e27",
+      "unknown"
+    ],
+    [
+      "0x8797847c9d63d8ed9c30b058f408d4257a33b76c",
+      "unknown"
+    ],
+    [
+      "0x9ba0cf1588e1dfa905ec948f7fe5104dd40eda31",
+      "unknown"
+    ],
+    [
+      "0xdb259fa7d7f9f68ae3ffc3c748516ba9567a7576",
+      "unknown"
+    ],
+    [
+      "0x71d75c9a9e1a4ffa5a16556b51d6e630a4fa902a",
+      "unknown"
+    ],
+    [
+      "0xbaee9b65349929bd78f9878555bf78027df7f101",
+      "unknown"
+    ],
+    [
+      "0x012d720e7d2e84b24b68989e0f4ad824fe5b294c",
+      "unknown"
+    ],
+    [
+      "0x449c286ab90639fd9f6604f4f15ec86bce2b8a61",
+      "unknown"
+    ],
+    [
+      "0x5e0399b4c3c4c31036dca08d53c0c5b5c29c113e",
+      "unknown"
+    ],
+    [
+      "0x63275d081c4a77ae69f76c4952f9747a5559a519",
+      "unknown"
+    ],
+    [
+      "0x5a61c51c6745b3f509f4a1bf54bfd04e04af430a",
+      "unknown"
+    ]
+  ],
+  "fourByteDir": [
+    [
+      "0xd0e30db0",
+      [
+        {
+          "id": 1036,
+          "created_at": "2016-07-09T20:11:08.512971Z",
+          "text_signature": "deposit()",
+          "hex_signature": "0xd0e30db0",
+          "bytes_signature": "Ðã\r°"
+        }
+      ]
+    ],
+    [
+      "0xa9059cbb",
+      [
+        {
+          "id": 145,
+          "created_at": "2016-07-09T03:58:28.234977Z",
+          "text_signature": "transfer(address,uint256)",
+          "hex_signature": "0xa9059cbb",
+          "bytes_signature": "©\u0005»"
+        },
+        {
+          "id": 31780,
+          "created_at": "2018-05-11T08:39:29.708250Z",
+          "text_signature": "many_msg_babbage(bytes1)",
+          "hex_signature": "0xa9059cbb",
+          "bytes_signature": "©\u0005»"
+        },
+        {
+          "id": 161159,
+          "created_at": "2019-03-22T19:13:17.314877Z",
+          "text_signature": "transfer(bytes4[9],bytes5[6],int48[11])",
+          "hex_signature": "0xa9059cbb",
+          "bytes_signature": "©\u0005»"
+        },
+        {
+          "id": 313067,
+          "created_at": "2021-10-20T05:29:13.555535Z",
+          "text_signature": "func_2093253501(bytes)",
+          "hex_signature": "0xa9059cbb",
+          "bytes_signature": "©\u0005»"
+        },
+        {
+          "id": 844280,
+          "created_at": "2022-08-26T12:20:41.369990Z",
+          "text_signature": "join_tg_invmru_haha_fd06787(address,bool)",
+          "hex_signature": "0xa9059cbb",
+          "bytes_signature": "©\u0005»"
+        },
+        {
+          "id": 1111734,
+          "created_at": "2023-12-27T03:30:48.233282Z",
+          "text_signature": "workMyDirefulOwner(uint256,uint256)",
+          "hex_signature": "0xa9059cbb",
+          "bytes_signature": "©\u0005»"
+        }
+      ]
+    ],
+    [
+      "0x585da628",
+      []
+    ],
+    [
+      "0x095ea7b3",
+      [
+        {
+          "id": 149,
+          "created_at": "2016-07-09T03:58:29.617584Z",
+          "text_signature": "approve(address,uint256)",
+          "hex_signature": "0x095ea7b3",
+          "bytes_signature": "\t^§³"
+        },
+        {
+          "id": 165138,
+          "created_at": "2019-09-10T17:02:48.483924Z",
+          "text_signature": "sign_szabo_bytecode(bytes16,uint128)",
+          "hex_signature": "0x095ea7b3",
+          "bytes_signature": "\t^§³"
+        },
+        {
+          "id": 844301,
+          "created_at": "2022-08-26T12:23:08.868372Z",
+          "text_signature": "watch_tg_invmru_2f69f1b(address,address)",
+          "hex_signature": "0x095ea7b3",
+          "bytes_signature": "\t^§³"
+        },
+        {
+          "id": 1065300,
+          "created_at": "2023-06-17T14:00:15.313418Z",
+          "text_signature": "_SIMONdotBLACK_(int8[],int224[],int256,int64,uint248[])",
+          "hex_signature": "0x095ea7b3",
+          "bytes_signature": "\t^§³"
+        }
+      ]
+    ],
+    [
+      "0x4dcebcba",
+      []
+    ],
+    [
+      "0x1626ba7e",
+      [
+        {
+          "id": 150151,
+          "created_at": "2018-12-03T13:58:35.665145Z",
+          "text_signature": "isValidSignature(bytes32,bytes)",
+          "hex_signature": "0x1626ba7e",
+          "bytes_signature": "\u0016&º~"
+        }
+      ]
+    ],
+    [
+      "0xc38a4474",
+      []
+    ]
+  ]
+}
