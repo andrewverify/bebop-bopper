@@ -60,99 +60,143 @@ describe("Bebop", function () {
 
   describe("Feature testing", function () {
     it("reactorCallback", async function () {
-      const { owner, pretendReactor, weth, permit2, dutchReactor, bebopExecutor } = await loadFixture(deployBebopFixture);
-     console.log(`Bebop Executor: ${await bebopExecutor.getAddress()}`);
+      const [me] = await hre.ethers.getSigners();
+      
+      const tokensAddressesSell = ["0x4200000000000000000000000000000000000006"] // WETH
+      const tokensSellAmounts = [parseEther("0.00001")] // 0.001 WETH
+      const tokensAddressBuy = ["0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"] // USDC
+      const chain = {
+          chainId: 8453,
+          name: "base" // "polygon" | "ethereum" | "arbitrum" | "blast" | "optimism"
+      }
+      const WETH = await hre.ethers.getContractAt("WETH",tokensAddressesSell[0]);
+      await setBalance(me.address,parseEther("10000"));
+      await WETH.deposit({value: tokensSellAmounts[0]});
+      await WETH.approve("0xbbbbbBB520d69a9775E85b458C58c648259FAD5F",tokensSellAmounts[0]);
 
-      const buyTokens = ["0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"] // USDT
-      const sellTokens = ["0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"] // WETH
-      const totalAmount = 150000000000000000n
-      const buyAmount = 100000000000n;
+    // Get quote
+    let quote = (await axios.get(`https://api.bebop.xyz/pmm/${chain.name}/v3/quote`, {
+      params: {
+          buy_tokens: tokensAddressBuy.toString(),
+          sell_tokens: tokensAddressesSell.toString(),
+          sell_amounts: tokensSellAmounts.toString(),
+          taker_address: me.address,
+          gasless: false,
+          skip_validation: true
+      }
+  })).data
+  console.log(quote)
+  if (quote.error !== undefined) {
+      return
+  }
 
-      let response;
-      await setBalance(owner.address,totalAmount);
-      // // give 1 ETH to executor
-      // await setBalance(await dutchReactor.getAddress(), parseEther("1"));
-      // await setBalance(await bebopExecutor.getAddress(), parseEther("1"));
-
-      // await setBalance(await pretendReactor.getAddress(), parseEther("1"));
-      await weth.deposit({value: buyAmount});
-      await weth.transfer(await bebopExecutor.getAddress(),buyAmount);
-      const USDT = await hre.ethers.getContractAt("ERC20",buyTokens[0]);
-
-      const feeData = await owner.provider.getFeeData();
-      console.log(feeData);
+  // Send the transaction
+  let txHash = await me.sendTransaction(quote.tx)
+  console.log(txHash)
+   const usdc = await hre.ethers.getContractAt("ERC20",tokensAddressBuy[0]);
+   console.log(await usdc.balanceOf(me.address));
 
 
-      // get bebop quote
-      try {
-        response = await (await axios.get(`https://api.bebop.xyz/pmm/ethereum/v3/quote`, {
-          params: {
-              buy_tokens: buyTokens.toString(),
-              sell_tokens: sellTokens.toString(),
-              sell_amounts: buyAmount.toString(),
-              taker_address: await bebopExecutor.getAddress(),
-              gasless: false,
-              skip_validation: true
+    //  console.log(`Bebop Executor: ${await bebopExecutor.getAddress()}`);
+
+    //   const buyTokens = ["0xdAC17F958D2ee523a2206206994597C13D831ec7"] // USDT
+    //   const sellTokens = ["0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"] // WETH
+    //   const totalAmount = 150000000000000000n
+    //   const buyAmount = [parseEther("0.00001")];
+
+
+    //   let response;
+    //   await setBalance(owner.address,parseEther("1"));
+    //         // // give 1 ETH to executor
+    //   // await setBalance(await bebopExecutor.getAddress(), parseEther("1"));
+
+    //   // await setBalance(await pretendReactor.getAddress(), parseEther("1"));
+    //  // await weth.deposit({value: buyAmount[0]});
+      
+    //   const USDT = await hre.ethers.getContractAt("ERC20",buyTokens[0]);
+
+    //   const feeData = await owner.provider.getFeeData();
+    //   console.log(feeData);
+
+
+
+    //   // get bebop quote
+    //   try {
+    //     response = await (await axios.get(`https://api.bebop.xyz/pmm/ethereum/v3/quote`, {
+    //       params: {
+    //           buy_tokens: buyTokens.toString(),
+    //           sell_tokens: sellTokens.toString(),
+    //           sell_amounts: buyAmount.toString(),
+    //           taker_address: owner.address,
+    //           gasless: false,
+    //           skip_validation: true
               
-          }
-      })).data
-      }
-      catch (error) {
-        console.log(error);
-      }
-      console.log(response);
+    //       }
+    //   })).data
+    //   }
+    //   catch (error) {
+    //     console.log(error);
+    //   }
+    //   console.log(response);
+    //   console.log({
+    //     buy_tokens: buyTokens.toString(),
+    //     sell_tokens: sellTokens.toString(),
+    //     sell_amounts: buyAmount.toString(),
+    //     taker_address: owner.address,
+    //     gasless: false,
+    //     skip_validation: true
+        
+    // });
+
+    // //remove the function selector from the calldata provided by Bebop API
+    // // leaving only the arguments for the bebop.singleSwap function
+    // const calldata =  response.tx.data;
+    // console.log(calldata);
+
+
+
       
-   
 
-    //remove the function selector from the calldata provided by Bebop API
-    // leaving only the arguments for the bebop.singleSwap function
-    const calldata =  response.tx.data;
-    console.log(calldata);
-
-
-
-      
-      // mint some ETH and WETH for the owner address
-      await setBalance(await dutchReactor.getAddress(),parseEther("2"));
-
-      const resolved: ResolvedOrderStruct[] = [
-        {
-          info: {
-            reactor: await dutchReactor.getAddress(),
-            // dutch reactor takes this in seconds NOT milliseconds
-            // 1000 seconds from now
-            deadline: Math.floor(Date.now() / 1000) + 1000,
-            nonce: 1,
-            swapper: owner.address,
-            additionalValidationContract: ZeroAddress,
-            additionalValidationData: "0x00"
+    //   const resolved: ResolvedOrderStruct[] = [
+    //     {
+    //       info: {
+    //         reactor: await dutchReactor.getAddress(),
+    //         // dutch reactor takes this in seconds NOT milliseconds
+    //         // 1000 seconds from now
+    //         deadline: Math.floor(Date.now() / 1000) + 1000,
+    //         nonce: 1,
+    //         swapper: owner.address,
+    //         additionalValidationContract: ZeroAddress,
+    //         additionalValidationData: "0x00"
 
 
-          },
-          input: {
-            token: sellTokens[0],
-            amount: buyAmount,
-            maxAmount: buyAmount
+    //       },
+    //       input: {
+    //         token: sellTokens[0],
+    //         amount: buyAmount[0],
+    //         maxAmount: buyAmount[0]
 
-          },
-          outputs: [
-            {
-              amount: parseEther("1"),
-              token: buyTokens[0],
-              recipient: owner.address
-            }
-          ],
-          sig: "0x1234",
-          hash: solidityPackedKeccak256(["uint"],[1])
-        }
-      ]
+    //       },
+    //       outputs: [
+    //         {
+    //           amount: parseEther("1"),
+    //           token: buyTokens[0],
+    //           recipient: owner.address
+    //         }
+    //       ],
+    //       sig: "0x1234",
+    //       hash: solidityPackedKeccak256(["uint"],[1])
+    //     }
+    //   ]
 
-      await bebopExecutor.connect(pretendReactor).reactorCallback(resolved,calldata);
-      console.log(await USDT.balanceOf(await dutchReactor.getAddress()));
-      console.log(`Owner: ${owner.address}`);
-      console.log(`Executor: ${await bebopExecutor.getAddress()}`);
-      console.log("pretendreactor",pretendReactor.address);
-      console.log("dutchreactor", await dutchReactor.getAddress());
+    //   //await bebopExecutor.connect(pretendReactor).reactorCallback(resolved,calldata);
+    //   //await weth.approve("0xbbbbbBB520d69a9775E85b458C58c648259FAD5F",buyAmount[0]);
+    //   await owner.sendTransaction({from: response.tx.from, to: response.tx.to, data: response.tx.data,maxPriorityFeePerGas: feeData.maxFeePerGas});
+    //   //now call as
+    //   console.log(`Owner: ${owner.address}`);
+    //   console.log(`Executor: ${await bebopExecutor.getAddress()}`);
+    //   console.log("pretendreactor",pretendReactor.address);
+    //   console.log("dutchreactor", await dutchReactor.getAddress());
       
     });
 

@@ -11,10 +11,11 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       forking: {
-        url: "https://mainnet.infura.io/v3/100a0970864f4dde865358262e3d5bb4",
+        url: "https://mainnet.base.org",
         enabled: true,
         
       },
+      chainId: 8453
 
     }
   }
