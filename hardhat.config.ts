@@ -11,7 +11,7 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       forking: {
-        url: "https://mainnet.base.org",
+        url: "https://base-mainnet.infura.io/v3/100a0970864f4dde865358262e3d5bb4",
         enabled: true,
         
       },
